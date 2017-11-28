@@ -19,7 +19,37 @@
           }
         ],
         "responses": {
-          "200": {}
+          "200": {
+            "description": "Returns Array of Articles",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "#/definitions/Article"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Article": {
+      "title": "Root Type for Article",
+      "description": "The root of the Article type's schema.",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "published": {
+          "type": "boolean"
+        },
+        "time": {
+          "format": "date-time",
+          "type": "string"
         }
       }
     }
